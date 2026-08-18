@@ -4,17 +4,21 @@ NetProbe is a lightweight network reconnaissance and scanning tool built to be a
 
 ---
 
+## Prerequisites
+
+* **Interpreter:** Python 3.8 or higher installed (Linux / macOS / Windows).
+* **Standard Libraries:** socket, subprocess, concurrent.futures, ipaddress, platform, re, sys (all included instandard Python distributions).
+* **Standalone Binary Compilation** PyInstaller (optional, for standalone .exe generation).
+
+---
+
 ## Key Features
 
-* **Host Discovery (Ping Sweep):** Rapidly discovers alive systems across CIDR target subnets (`/24`) using concurrent ICMP echo requests.
-* **Passive OS Fingerprinting:** Inspects Time-To-Live (TTL) return values from echo responses to infer remote operating systems without invasive probes:
-  * $\text{TTL} \le 64$: Linux / Unix / macOS
-  * $\text{TTL} \le 128$: Windows OS
-  * $\text{TTL} \le 255$: Network Appliances / Cisco IOS / Solaris
-* **TCP Port Scanning:** Executes asynchronous TCP Connect handshakes (`socket.connect_ex`) against common service ports.
-* **Service & Version Banner Grabbing:** Interrogates open ports with initial payload requests (e.g., HTTP HEAD, SSH banners) to identify service versions.
-* **Zero External Dependencies:** Built entirely with native Python modules (`socket`, `subprocess`, `concurrent.futures`, `ipaddress`, `re`).
-* **Standalone Executable:** Fully compatible with PyInstaller for one-click compilation into a portable `.exe` binary.
+* **Host Discovery (Ping Sweep):** Sends ICMP echo requests simultaneously to different CIDR subnets, based on the user defined CIDR range. Multi-threaded execution pools to quickly map alive machines, (/24).
+* **Passive OS Fingerprinting:** Recovers and analyzes the return values for the ICMP echo Time-To-Live (TTL) from IP packets. The architecture and the ability to classify target operating systems with accuracy, without sending intrusive probe traffic.
+* **TCP Port Scanning:** Performs multi-threaded TCP handshakes (socket.connect) across standard enterprise service ports
+* **Service & Version Banner Grabbing:** Starts low overhead banner requests (e.g., HTTP HEAD, SSH
+Retrieval of server versions directly from open listening sockets (handshakes).
 
 ---
 
@@ -25,25 +29,8 @@ netprobe/
 ├── netprobe.py          # Main Python source script
 ├── netprobe.exe         # Pre-compiled standalone Windows executable
 ├── README.md            # Documentation and setup guide
-├── Manual.pdf           # Detailed User's Manual and lab testing report
+├── Manual.pdf           # Detailed User's Manual
 └── Presentation.pptx    # Project presentation slide deck
-```
-
----
-
-## Prerequisites & Installation
-
-### Option 1: Running from Python Source
-* Python 3.8 or higher installed.
-* Standard library modules only (no `pip install` required for runtime).
-
-### Option 2: Building Standalone Executable (`.exe`)
-To build the binary yourself using PyInstaller:
-```bash
-pip install pyinstaller
-pyinstaller --onefile netprobe.py
-```
-The output binary will be generated inside the `dist/` directory as `netprobe.exe`.
 
 ---
 
