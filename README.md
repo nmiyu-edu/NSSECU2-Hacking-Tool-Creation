@@ -1,6 +1,6 @@
 # NSSECU2-Hacking-Tool-Creation
 
-NetProbe is a lightweight, multi-threaded CLI network reconnaissance and vulnerability scanning utility written in Python. Patterned after core NMAP scanning principles, it performs rapid host discovery, TCP port scanning, passive OS fingerprinting, and service/version banner grabbing using only Python standard libraries.
+NetProbe is a lightweight network reconnaissance and scanning tool built to be a custom security tool. It is an automated NMAP network probing tool that is built on many of the fundamental NMAP network probing principles. NetProbe is a fully system library-based Python application, and does not require third-party modules and can be compiled to run directly as a portable binary (.exe) for cross-platform lab demonstrations. Its key functions are identifying remote operating systems, TCP port scanning and service version banner reading.
 
 ---
 
