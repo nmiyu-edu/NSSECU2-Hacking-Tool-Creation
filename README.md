@@ -6,9 +6,15 @@ NetProbe is a lightweight network reconnaissance and scanning tool built to be a
 
 ## Prerequisites
 
+**System Requirements**
 * **Interpreter:** Python 3.8 or higher installed (Linux / macOS / Windows).
 * **Standard Libraries:** socket, subprocess, concurrent.futures, ipaddress, platform, re, sys (all included instandard Python distributions).
 * **Standalone Binary Compilation** PyInstaller (optional, for standalone .exe generation).
+
+**Network Testlab Configuration**
+* **Virtualization Platform:** VMware Workstation
+* **Network Mode:** Host-Only (VMnet1)
+* **Target Systems:** Windows Host (Target 1) and Kali Linux (Target 2).
 
 ---
 
