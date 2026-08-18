@@ -82,17 +82,6 @@ netprobe.exe <Target-IP-or-CIDR>
     --------------------------------------------------
     445/tcp  SMB           Banner not returned
     3389/tcp RDP           Banner not returned
-```
-
----
-
-## Lab Simulation & Testbed Environment
-
-NetProbe was verified in a host-only virtualized test network:
-* **Attacker Machine:** Kali Linux / Windows 11 host executing `netprobe.py`.
-* **Target VM 1 (Linux):** Ubuntu Server running Apache2 (`80`) and OpenSSH (`22`).
-* **Target VM 2 (Windows):** Windows Server with SMB (`445`) and RDP (`3389`) enabled.
-* **Verification:** Results cross-checked against baseline scans using `nmap -sV -O <target>`.
 
 ---
 
