@@ -98,9 +98,3 @@ NetProbe was verified in a host-only virtualized test network:
   * Implement raw TCP SYN (half-open) stealth scanning using raw sockets or Scapy.
   * Integrate UDP port scanning and comprehensive probe matching databases.
   * Add configurable port ranges and JSON/XML export capabilities.
-
----
-
-## Disclaimer
-
-This tool is designed and developed strictly for authorized educational research, network defense evaluation, and simulated penetration testing labs. Unauthorized scanning of networks without prior written permission is illegal.
